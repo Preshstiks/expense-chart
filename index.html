@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <title>Expense Chart</title>
+  </head>
+  <body>
+    
+         <div class="background">
+      <div class="top-region">
+        <div class="top-left">
+          <p class="top">My balance</p>
+    <h2 class="top">$921.48</h2>
+        </div>
+         <div class="logo">
+      <img src="logo.svg" alt="" />
+    </div>
+    </div>
+   
+   <div class="second-card">
+     <div class="single">
+     <h2 class="bold">Spending - Last 7 days</h2>
+   </div>
+   
+   <div class="">
+     <canvas id="myChart"></canvas>
+   </div>
+   
+   <div class="line">
+     <p> </p>
+   </div>
+      <div class="bottom">
+    <div class="bottom-left">
+      <p class="blur">Total this month</p>
+  <h2 class="bold">$478.33</h2>
+    </div>
+     
+  <div class="bottom-right">
+    <p>+2.4%</p>
+  <p class="blur">from last month</p>
+  </div>
+  </div>
+   </div>
+    </div>
+    
+
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+            label: 'USD $',
+            data: [17.45, 34.91, 52.36, 31.07, 23.39, 43.28, 25.48],
+            backgroundColor: [
+                'rgba(236, 119, 95, 1)',
+                'rgba(236, 119, 95, 1)',
+                'rgba(118, 181, 188, 1)',
+                 'rgba(236, 119, 95, 1)',
+                 'rgba(236, 119, 95, 1)',
+                  'rgba(236, 119, 95, 1)',
+                 'rgba(236, 119, 95, 1)'
+            ],
+            borderColor: [
+                 'rgba(236, 119, 95, 1)',
+                 'rgba(236, 119, 95, 1)',
+                 'rgba(118, 181, 188, 1)',
+                 'rgba(236, 119, 95, 1)',
+                 'rgba(236, 119, 95, 1)',
+                 'rgba(236, 119, 95, 1)',
+                 'rgba(236, 119, 95, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+ 
+  </body>
+</html>
